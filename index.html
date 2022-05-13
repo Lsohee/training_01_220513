@@ -57,19 +57,24 @@
   console.dir(container);
   
   // 전역변수임
-    let thok = true;
+  
+  
+  
+  let thok = true;
+  menu.addEventListener("click", function(){
+    // console.log("꿈이 아파 잠들지 못하는 밤");
+    // 이벤트 실행 확인 완료
+    // 자! 이제 똑딱이를 만들어 보겠습니다
     
     
     
-    menu.addEventListener("click", function(){
-      // console.log("꿈이 아파 잠들지 못하는 밤");
-      // 이벤트 실행 확인 완료
-      // 자! 이제 똑딱이를 만들어 보겠습니다
+    // console.log("광염소나타");
+    //<!-- ? 이걸 반복하게 해야함 -> 어떻게?
       if(thok === true){
         
-        // console.log("광염소나타");
-        for(let i =0; i<6; i++){
-          //<!-- ? 이걸 반복하게 해야함 -> 어떻게?
+        thok = false;
+
+            for(let i =0; i<6; i++){
             // let changeValue = make[i];
             //  이렇게 배열을 넣을 려고 했는데 안됨
             // let changeValue  = change[i];
@@ -107,22 +112,24 @@
                 // <!-- ? 어떻게 해야할까?
                 // return change; 인가? 
               };
-        thok = false;
-        
-      } else if (thok === false){
-        console.log("어둠속으로 숨고만 싶은 밤")
-        for(let i =0; i<6; i++){
-          let make = document.createElement("div");
-          let change = container.appendChild(make);
-          let remove = container.remove(make);
-          // 이렇게 쓰니까 없어지긴 하는데 다시 만들어지진 않음 
-          // 왜 딱까지는 되고 다시 똑이 안되는 것일까
-          // 버튼 기능 되는거확인 했는데
-          change.classList = "items"
-          change.textContent = "작은 숨소리 마저 아려와"
-        };
-        thok = true;
-      }
+
+
+              console.log(thok);
+              } else if (thok === false){
+                console.log("어둠속으로 숨고만 싶은 밤")
+                let make = document.createElement("div");
+                let change = container.appendChild(make);
+                container.remove(make);
+                // let zero = 
+                // container.children.splice(0,5) ;
+                console.dir(container);
+                // console.log(container.children);
+                // console.log(container.children[3]);
+                stop = false;
+                
+                thok = true;
+                console.log(thok);
+              }
       
       
           });
