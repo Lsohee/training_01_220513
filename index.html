@@ -59,7 +59,7 @@
   // 전역변수임
     let thok = true;
     
-    
+    console.log(container.children.lenght);
     
     menu.addEventListener("click", function(){
       // console.log("꿈이 아파 잠들지 못하는 밤");
@@ -67,21 +67,28 @@
       // 자! 이제 똑딱이를 만들어 보겠습니다
       
       
-      if(thok === true){
+      if(container.children.lenght === false){
         console.log("파도를 타고")
+
         for(let i =0; i<6; i++){
           var make = document.createElement("div");
           let change = container.appendChild(make);
           change.classList = "items"
           change.textContent = "작은 숨소리 마저 아려와"
+          // <!-- ? 왜 두번째 부터는 생성이 안될까? 스위치는 잘 작동됨
+
+
+          console.log(i)
+          // for 문도 잘돌아가는 것을 console.log(i)로 확인
+
+          // 내생각에는 else if문에서 설정한 container.remove(make);가 안없어지는 거 같아
+          }
+          thok = false;
+          } else if (container.children.lenght === 6){
+            container.remove(make);
+            console.log("달을 등지고")
+            thok = true;
         };
-        // <!-- ? 왜 두번째 부터는 실행이 안될까? 스위치는 잘 작동됨
-        thok = false;
-      } else if (thok === false){
-        let remove = container.remove(make);
-        console.log("달을 등지고")
-        thok = true;
-      }
       
       
     });
